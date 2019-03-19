@@ -2,12 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Roman Martyniuk</Authors>
-    <Description />
+    <Description>A small library which provides different commonly-used utils and extensions.</Description>
+    <RepositoryUrl>https://github.com/roman-martyniuk/RM.Common.Utils</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>© 2019 Roman Martyniuk</Copyright>
+    <PackageTags>utils extensions timer</PackageTags>
+    <PackageLicenseUrl>https://github.com/roman-martyniuk/RM.Common.Utils/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <Product>RM.Common.Utils</Product>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>v.1.0.0 
+- Initial Release</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath></OutputPath>
     <DocumentationFile>D:\projects\RM\RM.Common.Utils\src\RM.Common.Utils\RM.Common.Utils.xml</DocumentationFile>
   </PropertyGroup>
 
