@@ -1,0 +1,2191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RM.Common.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:RM.Common.Utils.ArrayExtensions">
+            <summary>
+            Represents extension methods for arrays.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.ArrayExtensions.Combine``1(``0[],``0[])">
+            <summary>
+            Combines 2 arrays together.
+            </summary>
+            <param name="first">The first array.</param>
+            <param name="second">The second array.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ArrayExtensions.Combine``1(``0[],``0[],``0[])">
+            <summary>
+            Combines 3 arrays together.
+            </summary>
+            <param name="first">The first array.</param>
+            <param name="second">The second array.</param>
+            <param name="third">The third array.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Base64StringExtension">
+            <summary>
+            Represents extension methods for Base64 convertions.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Base64StringExtension.ToBase64String(System.Byte[])">
+            <summary>Converts an array of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits.</summary>
+            <param name="data">An array of 8-bit unsigned integers.</param>
+            <returns>The string representation, in base 64, of the contents of <paramref name="data"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is null.</exception>
+        </member>
+        <member name="M:RM.Common.Utils.Base64StringExtension.FromBase64String(System.String)">
+            <summary>Converts the specified string, which encodes binary data as base-64 digits, to an equivalent 8-bit unsigned integer array.</summary>
+            <param name="str">The string to convert.</param>
+            <returns>An array of 8-bit unsigned integers that is equivalent to <paramref name="str"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="str"/> is null.</exception>
+            <exception cref="T:System.FormatException">The length of <paramref name="str"/>, ignoring white-space characters, is not zero or a multiple of 4.   -or-   The format of <paramref name="str">s</paramref> is invalid. <paramref name="str">s</paramref> contains a non-base-64 character, more than two padding characters, or a non-white space-character among the padding characters.</exception>
+        </member>
+        <member name="T:RM.Common.Utils.BoolExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:System.Boolean" />.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.BoolExtensions.ToLowerString(System.Boolean)">
+            <summary>
+            Converts specified <paramref name="value"/> to lower-case string ("true" or false").
+            </summary>
+            <param name="value">Value to convert.</param>
+            <returns>The converted value.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.BoolExtensions.ToLowerString(System.Nullable{System.Boolean})">
+            <summary>
+            Converts specified <paramref name="value"/> to lower-case string ("true" or false").
+            NOTE: if <paramref name="value"/> is null an empty string is returned.
+            </summary>
+            <param name="value">Value to convert.</param>
+            <returns>The converted value.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.BytesToHumanReadableStringExtensions">
+            <summary>
+            Represents extensions for converting bytes number (e.g. file size) in the human readable format (max 3 digits) (1024B => 1 KB, 529283827B => 504 MB).
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.BytesToHumanReadableStringExtensions.BytesToHumanReadableString(System.Int64,System.IFormatProvider)">
+            <summary>
+            Converts a number of bytes (size in bytes) to the human readable format using the specified <paramref name="formatProvider"/>.
+            </summary>
+            <param name="bytes">The number of bytes to format.</param>
+            <param name="formatProvider">The format provider.</param>
+        </member>
+        <member name="M:RM.Common.Utils.BytesToHumanReadableStringExtensions.BytesToHumanReadableString(System.Int64)">
+            <summary>
+            Converts a number of bytes (size in bytes) to the human readable format.
+            </summary>
+            <param name="bytes">The number of bytes to format.</param>
+        </member>
+        <member name="M:RM.Common.Utils.BytesToHumanReadableStringExtensions.BytesToHumanReadableStringInvariant(System.Int64)">
+            <summary>
+            Converts a number of bytes (size in bytes) to the human readable format using culture-independent (invariant) format provider.
+            </summary>
+            <param name="bytes">The number of bytes to format.</param>
+        </member>
+        <member name="T:RM.Common.Utils.CompositeKey">
+            <summary>
+            Provides static methods for creating <see cref="T:RM.Common.Utils.CompositeKey`2"/> and <see cref="T:RM.Common.Utils.CompositeKey`3"/> objects.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey.Create``2(``0,``1)">
+            <summary>Creates a new 2-component composite key.</summary>
+            <param name="key1">The value of the first component of the key.</param>
+            <param name="key2">The value of the second component of the key.</param>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey.Create``3(``0,``1,``2)">
+            <summary>Creates a new 2-component composite key.</summary>
+            <param name="key1">The value of the first component of the key.</param>
+            <param name="key2">The value of the second component of the key.</param>
+            <param name="key3">The value of the third component of the key.</param>
+        </member>
+        <member name="T:RM.Common.Utils.CompositeKey`2">
+            <summary>
+            Represents a composite key that can be used in <see cref="T:System.Collections.Generic.IDictionary`2"/> or <see cref="T:System.Collections.Generic.ISet`1"/>.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.CompositeKey`2.Key1">
+            <summary>
+            The first component of the key.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.CompositeKey`2.Key2">
+            <summary>
+            The second component of the key.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`2.#ctor(`0,`1)">
+            <summary>
+            Creates new instance of the <see cref="T:RM.Common.Utils.CompositeKey`2"/> structure.
+            </summary>
+            <param name="key1">The first component of the key.</param>
+            <param name="key2">The second component of the key.</param>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`2.Equals(RM.Common.Utils.CompositeKey{`0,`1})">
+            <summary>Indicates whether the current object is equal to another object of the same type.</summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`2.Equals(System.Object)">
+            <summary>Indicates whether this instance and a specified object are equal.</summary>
+            <param name="obj">The object to compare with the current instance.</param>
+            <returns>true if <paramref name="obj">obj</paramref> and this instance are the same type and represent the same value; otherwise, false.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`2.GetHashCode">
+            <summary>Returns the hash code for this instance.</summary>
+            <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`2.op_Equality(RM.Common.Utils.CompositeKey{`0,`1},RM.Common.Utils.CompositeKey{`0,`1})">
+            <summary>
+            The '==' operator implementation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`2.op_Inequality(RM.Common.Utils.CompositeKey{`0,`1},RM.Common.Utils.CompositeKey{`0,`1})">
+            <summary>
+            The '!=' operator implementation.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.CompositeKey`3">
+            <summary>
+            Represents a composite key that can be used in <see cref="T:System.Collections.Generic.IDictionary`2"/> or <see cref="T:System.Collections.Generic.HashSet`1"/>.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.CompositeKey`3.Key1">
+            <summary>
+            The first component of the key.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.CompositeKey`3.Key2">
+            <summary>
+            The second component of the key.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.CompositeKey`3.Key3">
+            <summary>
+            The third component of the key.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`3.#ctor(`0,`1,`2)">
+            <summary>
+            Creates new instance of the <see cref="T:RM.Common.Utils.CompositeKey`2"/> structure.
+            </summary>
+            <param name="key1">The first component of the key.</param>
+            <param name="key2">The second component of the key.</param>
+            <param name="key3">The third component of the key.</param>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`3.Equals(System.Object)">
+            <summary>Indicates whether this instance and a specified object are equal.</summary>
+            <param name="obj">The object to compare with the current instance.</param>
+            <returns>true if <paramref name="obj">obj</paramref> and this instance are the same type and represent the same value; otherwise, false.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`3.Equals(RM.Common.Utils.CompositeKey{`0,`1,`2})">
+            <summary>Indicates whether the current object is equal to another object of the same type.</summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`3.GetHashCode">
+            <summary>Returns the hash code for this instance.</summary>
+            <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`3.op_Equality(RM.Common.Utils.CompositeKey{`0,`1,`2},RM.Common.Utils.CompositeKey{`0,`1,`2})">
+            <summary>
+            The '==' operator implementation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.CompositeKey`3.op_Inequality(RM.Common.Utils.CompositeKey{`0,`1,`2},RM.Common.Utils.CompositeKey{`0,`1,`2})">
+            <summary>
+            The '!=' operator implementation.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.DateTimeExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:System.DateTime" />.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.AddWeeks(System.DateTime,System.Int32)">
+            <summary>
+            Returns a new <see cref="T:System.DateTime" /> that adds the specified number of weeks to the value of this instance.
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <param name="weeks">A number of whole and fractional days. The <paramref name="weeks" /> parameter can be negative or positive.</param>
+            <returns>An DateTime whose value is the sum of the date and time represented by this instance and the number of weeks represented by <paramref name="weeks" />.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.Next(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Returns first next occurence of specified DayOfTheWeek.
+            NOTE: The time portion is set to 0:00:00.000.
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <param name="dayOfWeek">A DayOfWeek to find the next occurence of</param>
+            <returns>A DateTime whose value is the sum of the date represented by this instance and the enum value represented by the <paramref name="dayOfWeek"/>.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.Prev(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Returns previous "first" occurence of specified <paramref name="dayOfWeek"/>.
+            NOTE: The time portion is set to 0:00:00.000.
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <param name="dayOfWeek">A DayOfWeek to find the previous occurence of</param>
+            <returns>A DateTime whose value is the sum of the date represented by this instance and the enum value represented by the day.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsWeekend(System.DateTime)">
+            <summary>
+            Returns true if the day is Saturday or Sunday
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>boolean value indicating if the date is a weekend</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.EndOfDay(System.DateTime)">
+            <summary>
+            Returns the absolute end of the given day (the last tick of the last hour for the given date)
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>Returns the absolute end of the given day (the last tick of the last hour for the given date)</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.Quarter(System.DateTime)">
+            <summary>
+            Get the quarter that the datetime is in.
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>Returns 1 to 4 that represenst the quarter that the datetime is in.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.BeginningOfMonth(System.DateTime)">
+            <summary>
+            Returns the Start of the given month (the fist millisecond of the given date)
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>Returns the Start of the given month (the fist millisecond of the given date)</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.EndOfMonth(System.DateTime)">
+            <summary>
+            Returns the absolute end of the given month (the last tick of the last hour for the given date)
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>Returns the absolute end of the given month (the last tick of the last hour for the given date)</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.BeginningOfWeek(System.DateTime)">
+            <summary>
+            Returns the Start of the given week (the fist millisecond of the given date)
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>Returns the Start of the given week (the fist millisecond of the given date)</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.EndOfWeek(System.DateTime)">
+            <summary>
+            Returns the absolute end of the given week (the last tick of the last hour for the given date)
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <returns>Returns the absolute end of the given week (the last tick of the last hour for the given date)</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsBefore(System.DateTime,System.DateTime)">
+            <summary>
+            Returns true if the day is before the <paramref name="datetime" />
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <param name="datetime">The target <see cref="T:System.DateTime" /> value.</param>
+            <returns>boolean value indicating if the date is before <paramref name="datetime" /></returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsAfter(System.DateTime,System.DateTime)">
+            <summary>
+                Returns true if the day is after the <paramref name="datetime" />
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <param name="datetime">The target <see cref="T:System.DateTime" /> value.</param>
+            <returns>boolean value indicating if the date is before <paramref name="datetime" /></returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsBetween(System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Returns true if the date is between (including range values) the two <see cref="T:System.DateTime" /> values.
+            </summary>
+            <param name="value">DateTime Base, from where the calculation will be preformed.</param>
+            <param name="startDate">Start date to check for</param>
+            <param name="endDate">End date to check for</param>
+            <returns>boolean value indicating if the date is between (including range values) the two values</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsBetween(System.Nullable{System.DateTime},System.DateTime,System.DateTime)">
+            <summary>
+            Returns true if the date is between (including range values) the two <see cref="T:System.DateTime" /> values.
+            </summary>
+            <param name="value">DateTime base, from where the calculation will be preformed.</param>
+            <param name="startDate">Start date to check for</param>
+            <param name="endDate">End date to check for</param>
+            <returns>boolean value indicating if the date is between (including range values) the two values</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.TotalWeeks(System.TimeSpan)">
+            <summary>
+            Returns the total number of weeks in the specified <paramref name="value"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsLastDayOfMonth(System.DateTime)">
+            <summary>
+            Returns true if the day is the last day of month.
+            </summary>
+            <param name="date">The date to check.</param>
+            <returns>Boolean value indicating if the date is a last day of month.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.IsLeapYear(System.DateTime)">
+             <summary>
+             Returns an indication whether the year of the specified <paramref name="date"/> is a leap year.
+             </summary>
+             <param name="date">The date to check.</param>
+            <returns>true if <paramref name="date"/> is a leap year date; otherwise, false.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.NextLeapYear(System.DateTime)">
+            <summary>
+            Returns the next leap year after the specified <paramref name="date"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <returns>The next leap year.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.SetTimeOfDay(System.DateTime,System.TimeSpan)">
+            <summary>
+            Sets the <see cref="P:System.DateTime.TimeOfDay"/> component of the specified <paramref name="date"/> instance.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="timeOfDay">The time of day. Must be greater than or equal to <see cref="F:System.TimeSpan.Zero"/> and lower than or equal to 23:59:59.999.9999.</param>
+            <returns>The new <see cref="T:System.DateTime"/> instance with the specified <paramref name="timeOfDay"/> component.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.SetDayOfMonth(System.DateTime,System.Int32)">
+            <summary>
+            Sets the day component of the specified <paramref name="date"/>.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="day">The day to set. Must be greater than or equal to 1 and lower than or equal to the total number of days in the month.</param>
+            <returns>The new <see cref="T:System.DateTime"/> instance with the specified <paramref name="day"/> component.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.TrimToSeconds(System.DateTime)">
+            <summary>
+            Trims the specified <paramref name="datetime"/> to seconds.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.TrimToSeconds(System.Nullable{System.DateTime})">
+            <summary>
+            Trims the specified <paramref name="datetime"/> to seconds.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.ToUtcKind(System.DateTime)">
+            <summary>
+            Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as Coordinated Universal Time (UTC).
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DateTimeExtensions.ToLocalKind(System.DateTime)">
+            <summary>
+            Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as local time.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.DecimalExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:System.Decimal" />.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DecimalExtensions.GetDecimalPlaces(System.Decimal)">
+            <summary>
+            Returns a number of decimal places in the specified <paramref name="number"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DecimalExtensions.Format(System.Decimal,System.Byte,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Converts specified <paramref name="value"/> to its string representation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DecimalExtensions.Format(System.Nullable{System.Decimal},System.Byte,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Converts specified <paramref name="value"/> to its string representation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DecimalExtensions.Format(System.Double,System.Byte,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Converts specified <paramref name="value"/> to its string representation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DecimalExtensions.Format(System.Nullable{System.Double},System.Byte,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Converts specified <paramref name="value"/> to its string representation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DecimalExtensions.Trim(System.Decimal,System.Int32)">
+            <summary>
+            Trims specified <paramref name="value"/> to the specified number of <paramref name="decimalPlaces"/>.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.DeclensionExtensions">
+            <summary>
+            Represents declension extension methods.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DeclensionExtensions.Decline(System.String,System.Int64,System.String,System.String)">
+            <summary>
+            Returns the word declension depending on the given number.
+            NOTE: This overload version is usefull for russian-like languages.
+            </summary>
+            <param name="nominative">Nominative (Именительный падеж слова). e.g. "день".</param>
+            <param name="number">The number from which the selected word depends.</param>
+            <param name="plural">Plural (Множественное число слова). e.g. "дней".</param>
+            <param name="genitive">Genitive (Родительный падеж слова). e.g. "дня".</param>
+            <returns>Returns the word declension depending on the given number.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DeclensionExtensions.Decline(System.Int64,System.String,System.String,System.String)">
+            <summary>
+            Returns the word declension depending on the given number.
+            NOTE: This overload version is usefull for russian-like languages.
+            </summary>
+            <param name="number">The number from which the selected word depends.</param>
+            <param name="nominative">Nominative (Именительный падеж слова). e.g. "день".</param>
+            <param name="plural">Plural (Множественное число слова). e.g. "дней".</param>
+            <param name="genitive">Genetive (Родительный падеж слова). e.g. "дня".</param>
+            <returns>Returns the word declension depending on the given number.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DeclensionExtensions.Decline(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Returns the word declension depending on the given number.
+            NOTE: This overload version is usefull for russian-like languages.
+            </summary>
+            <param name="number">The number from which the selected word depends.</param>
+            <param name="nominative">Nominative (Именительный падеж слова). e.g. "день".</param>
+            <param name="plural">Plural (Множественное число слова). e.g. "дней".</param>
+            <param name="genitive">Genetive (Родительный падеж слова). e.g. "дня".</param>
+            <returns>Returns the word declension depending on the given number.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DeclensionExtensions.Decline(System.String,System.Int64,System.String)">
+            <summary>
+            Returns the word declension depending on the given number.
+            NOTE: This overload version is usefull for english-like languages.
+            </summary>
+            <param name="singular">Singular. e.g. "day".</param>
+            <param name="number">The number from which the selected word depends.</param>
+            <param name="plural">Plural. e.g. "days".</param>
+            <returns>Returns the word declension depending on the given number.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DeclensionExtensions.Decline(System.Int64,System.String,System.String)">
+            <summary>
+            Returns the word declension depending on the given number.
+            NOTE: This overload version is usefull for english-like languages.
+            </summary>
+            <param name="number">The number from which the selected word depends.</param>
+            <param name="singular">Singular. e.g. "day".</param>
+            <param name="plural">Plural. e.g. "days".</param>
+            <returns>Returns the word declension depending on the given number.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.DeclensionExtensions.Decline(System.Int32,System.String,System.String)">
+            <summary>
+            Returns the word declension depending on the given number.
+            NOTE: This overload version is usefull for english-like languages.
+            </summary>
+            <param name="number">The number from which the selected word depends.</param>
+            <param name="singular">Singular. e.g. "day".</param>
+            <param name="plural">Plural. e.g. "days".</param>
+            <returns>Returns the word declension depending on the given number.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.DictionaryExtensions">
+            <summary>
+            Represents extension methods for dictionaries.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.Keys``2(System.Collections.Concurrent.ConcurrentDictionary{``0,``1})">
+            <summary>
+            Returns ConcurrentDictionary enumerator over keys.
+            NOTE: Returns not a keys snapshot, you may get dirty reads.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.Values``2(System.Collections.Concurrent.ConcurrentDictionary{``0,``1})">
+            <summary>
+            Returns ConcurrentDictionary enumerator over values.
+            NOTE: Returns not a values snapshot, you may get dirty reads.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.TryRemove``2(System.Collections.Concurrent.ConcurrentDictionary{``0,``1},``0)">
+            <summary>
+            Attempts to remove and return the value that has a specified <paramref name="key"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.Remove``2(System.Collections.Concurrent.ConcurrentDictionary{``0,``1},``0)">
+            <summary>
+            Removes the value with the specified key from the <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.TryGetValue``2(System.Collections.Generic.IReadOnlyDictionary{``0,``1},``0)">
+            <summary>
+            Tries to read value and returns the value if successfully read. Otherwise return default value for value's type.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.AddOrUpdateRange``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
+            <summary>
+            Adds a range of keys/values to the specified <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.AddOrUpdateRange``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IEnumerable{``1},System.Func{``1,``0})">
+            <summary>
+            Adds a range of keys/values to the specified <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.AddOrUpdateRange``3(System.Collections.Generic.IDictionary{``1,``2},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})">
+            <summary>
+            Adds a range of keys/values to the specified <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.ToConcurrentDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>Creates a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from an <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key selector function.</summary>
+            <param name="source">An <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from.</param>
+            <param name="keySelector">A function to extract a key from each element.</param>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.ToConcurrentDictionary``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>Creates a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from an <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key selector function.</summary>
+            <param name="source">An <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from.</param>
+            <param name="keySelector">A function to extract a key from each element.</param>
+            <param name="comparer">An <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> to compare keys.</param>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})">
+            <summary>Creates a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from an <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key selector function.</summary>
+            <param name="source">An <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from.</param>
+            <param name="keySelector">A function to extract a key from each element.</param>
+            <param name="valueSelector">A function to extract a value from each element.</param>
+        </member>
+        <member name="M:RM.Common.Utils.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>Creates a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from an <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to a specified key selector function.</summary>
+            <param name="source">An <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from.</param>
+            <param name="keySelector">A function to extract a key from each element.</param>
+            <param name="valueSelector">A function to extract a value from each element.</param>
+            <param name="comparer">An <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> to compare keys.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Ensure">
+            <summary>
+            Represents methods that can be used to ensure that parameter values meet expected conditions.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsBetween``1(``0,``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is between a minimum and a maximum value.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="min">The minimum value.</param>
+            <param name="max">The maximum value.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsEqualTo``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is equal to a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsEqualTo``1(``0,System.Object,System.String)">
+            <summary>
+            Ensures that the value of a parameter is equal to a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThan``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanOrEqualTo``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than or equal to a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsLowerThan``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is lower than a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsLowerThanOrEqualTo``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is lower than or equal to a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanOrEqualToZero(System.Int32,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanOrEqualToZero(System.Int64,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanOrEqualToZero(System.Decimal,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanOrEqualToZero(System.TimeSpan,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanZero(System.Int32,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanZero(System.Int64,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanZero(System.Decimal,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsGreaterThanZero(System.TimeSpan,System.String)">
+            <summary>
+            Ensures that the value of a parameter is greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsInfiniteOrGreaterThanOrEqualToZero(System.TimeSpan,System.String)">
+            <summary>
+            Ensures that the value of a parameter is infinite or greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsInfiniteOrGreaterThanZero(System.TimeSpan,System.String)">
+            <summary>
+            Ensures that the value of a parameter is infinite or greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNotNull``1(``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is not null.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNotNullOrEmpty(System.String,System.String)">
+            <summary>
+            Ensures that the value of a parameter is not null or empty.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNotNullOrWhiteSpace(System.String,System.String)">
+            <summary>
+            Ensures that the value of a parameter is not null or empty/whitespace.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNull``1(``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is null.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThan``1(System.Nullable{``0},``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThan``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanOrEqualTo``1(System.Nullable{``0},``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than or equal to a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanOrEqualTo``1(``0,``0,System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than or equal to a comparand.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <typeparam name="T">Type type of the value.</typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanOrEqualToZero(System.Nullable{System.Int32},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanOrEqualToZero(System.Nullable{System.Int64},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanOrEqualToZero(System.Nullable{System.Decimal},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than or equal to zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanZero(System.Nullable{System.Int32},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanZero(System.Nullable{System.Int64},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanZero(System.Nullable{System.Decimal},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.IsNullOrGreaterThanZero(System.Nullable{System.TimeSpan},System.String)">
+            <summary>
+            Ensures that the value of a parameter is null or greater than zero.
+            </summary>
+            <param name="value">The value of the parameter.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.That(System.Boolean,System.String)">
+            <summary>
+            Ensures that an assertion is true.
+            </summary>
+            <param name="assertion">The assertion.</param>
+            <param name="message">The message to use with the exception that is thrown if the assertion is false.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.That(System.Boolean,System.String,System.String)">
+            <summary>
+            Ensures that an assertion is true.
+            </summary>
+            <param name="assertion">The assertion.</param>
+            <param name="message">The message to use with the exception that is thrown if the assertion is false.</param>
+            <param name="paramName">The parameter name.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionIsNotNullOrEmpty``1(System.Collections.Generic.ICollection{``0},System.String)">
+            <summary>
+            Ensures that the collection is not null or empty.
+            </summary>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionItemsAreNotNull``1(System.Collections.Generic.ICollection{``0},System.String)">
+            <summary>
+            Ensures that the all collection items are not null.
+            NOTE: Does not throw exception if collection is null or empty.
+            </summary>
+            <typeparam name="T">The type of the collection items.</typeparam>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionIsNotNullOrEmptyAndItemsAreNotNull``1(System.Collections.Generic.ICollection{``0},System.String)">
+            <summary>
+            Ensures that the the collection is not null or empty and all collection items are not null.
+            </summary>
+            <typeparam name="T">The type of the collection items.</typeparam>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionItemsAreGreaterThan``1(System.Collections.Generic.ICollection{``0},``0,System.String)">
+            <summary>
+            Ensures that the all collection items are greater than a comparand.
+            NOTE: Does not throw exception if collection is null or empty.
+            </summary>
+            <typeparam name="T">The type of the collection items.</typeparam>
+            <param name="collection">The collection of items.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionIsNotNullOrEmptyAndItemsAreGreaterThan``1(System.Collections.Generic.ICollection{``0},``0,System.String)">
+            <summary>
+            Ensures that the the collection is not null or empty and all collection items are greater than a comparand.
+            </summary>
+            <typeparam name="T">The type of the collection items.</typeparam>
+            <param name="collection">The collection of items.</param>
+            <param name="comparand">The comparand.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionItemsAreGreaterThanZero(System.Collections.Generic.ICollection{System.Int64},System.String)">
+            <summary>
+            Ensures that the all collection items are greater than zero.
+            NOTE: Does not throw exception if collection is null or empty.
+            </summary>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionItemsAreGreaterThanZero(System.Collections.Generic.ICollection{System.Int32},System.String)">
+            <summary>
+            Ensures that the all collection items is greater than zero.
+            NOTE: Does not throw exception if collection is null or empty.
+            </summary>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionIsNotNullOrEmptyAndItemsAreGreaterThanZero(System.Collections.Generic.ICollection{System.Int64},System.String)">
+            <summary>
+            Ensures that the the collection is not null or empty and all collection items are greater than zero.
+            NOTE: Does not throw exception if collection is null or empty.
+            </summary>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Ensure.CollectionIsNotNullOrEmptyAndItemsAreGreaterThanZero(System.Collections.Generic.ICollection{System.Int32},System.String)">
+            <summary>
+            Ensures that the the collection is not null or empty and all collection items is greater than zero.
+            NOTE: Does not throw exception if collection is null or empty.
+            </summary>
+            <param name="collection">The collection of items.</param>
+            <param name="paramName">The name of the parameter.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Enum`1">
+            <summary>
+            Helper class for enum types.
+            </summary>
+            <typeparam name="TEnum">Must be enum type (declared using the <c>enum</c> keyword)</typeparam>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.Values">
+            <summary>
+            Represents a readonly collection of plain enum values.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.Contexts">
+            <summary>
+            Represents a readonly collection of enum value's contexts which contains an detailed (value, name, custom attributes) information about enum values.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.IsDefined(`0)">
+            <summary>
+            Returns an indication whether a constant with a specified <paramref name="value"/> exists in an enumeration.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetContext(`0)">
+            <summary>
+            Gets the detailed information about a specified enum value.
+            NOTE: Throws exception if the specified enum <paramref name="value"/> is not defined in the <typeparamref name="TEnum"/> type.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.TryGetContext(`0)">
+            <summary>Tries to get the detailed information about a specified enum value.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetName(`0)">
+            <summary>Gets the name of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetDisplayName(`0)">
+            <summary>Gets the localized name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetName"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetShortName(`0)">
+            <summary>
+            Gets the localized short name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetShortName"/>) of the specified enum <paramref name="value"/>.
+            NOTE: If <see cref="P:System.ComponentModel.DataAnnotations.DisplayAttribute.ShortName"/> is <c>null</c>, the value from <see cref="M:RM.Common.Utils.Enum`1.GetDisplayName(`0)"/> will be returned.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetDescription(`0)">
+            <summary>Gets the localized description (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetDescription"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetGroupName(`0)">
+            <summary>Gets the localized group name (<see cref="P:System.ComponentModel.DataAnnotations.DisplayAttribute.GroupName"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetPromt(`0)">
+            <summary>Gets the localized promt (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetPrompt"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetAttributes(`0)">
+            <summary>
+            Gets the collection of the custom attributes for the specified enum <paramref name="value"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.GetAttribute``1(`0)">
+            <summary>
+            Gets the custom attribute of the specified enum <paramref name="value"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.Parse(System.String,System.Boolean)">
+            <summary>
+            Parses the string representation of the specified enum value.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.TryParse(System.String,System.Boolean)">
+            <summary>
+            Attempts to parse the string representation of the specified enum value.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.Find(System.Func{RM.Common.Utils.Enum{`0}.EnumValueContext,System.Boolean})">
+            <summary>
+            Finds the specified enum value using predicate.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.TryFind(System.Func{RM.Common.Utils.Enum{`0}.EnumValueContext,System.Boolean})">
+            <summary>
+            Tries to find the specified enum value using predicate.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.Enum`1.EnumValueContext">
+            <summary>
+            Represents a detailed information about the enum value.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.Value">
+            <summary>Gets the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.Name">
+            <summary>Gets the name of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.DisplayName">
+            <summary>Gets the localized name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetName"/>) of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.ShortName">
+            <summary>
+            Gets the localized short name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetShortName"/>) of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.
+            NOTE: If <see cref="P:System.ComponentModel.DataAnnotations.DisplayAttribute.ShortName"/> is <c>null</c>, the value from <see cref="P:RM.Common.Utils.Enum`1.EnumValueContext.DisplayName"/> will be returned.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.Description">
+            <summary>Gets the localized description (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetDescription"/>) of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.GroupName">
+            <summary>Gets the localized group name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetGroupName"/>) of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.Prompt">
+            <summary>Gets the localized promt (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetPrompt"/>) of the specified enum value.</summary>
+        </member>
+        <member name="P:RM.Common.Utils.Enum`1.EnumValueContext.Attributes">
+            <summary>Gets the custom attributes of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.Enum`1.EnumValueContext.GetAttribute``1">
+            <summary>Gets the custom attribute of the enum value represented by current <see cref="T:RM.Common.Utils.Enum`1.EnumValueContext"/>.</summary>
+        </member>
+        <member name="T:RM.Common.Utils.EnumExtensions">
+            <summary>
+            Represents extension methods for enums.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.IsDefined``1(``0)">
+            <summary>
+            Returns an indication whether a constant with a specified <paramref name="value"/> exists in an enumeration.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetContext``1(``0)">
+            <summary>
+            Gets the detailed information about a specified enum value.
+            NOTE: Throws exception if the specified enum <paramref name="value"/> is not defined in the <typeparamref name="TEnum"/> type.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.TryGetContext``1(``0)">
+            <summary>Tries to get the detailed information about a specified enum value.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetName``1(``0)">
+            <summary>Gets the name of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetDisplayName``1(``0)">
+            <summary>Gets the localized name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetName"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetShortName``1(``0)">
+            <summary>
+            Gets the localized short name (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetShortName"/>) of the specified enum <paramref name="value"/>.
+            NOTE: If <see cref="P:System.ComponentModel.DataAnnotations.DisplayAttribute.ShortName"/> is <c>null</c>, the value from <see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetName"/> will be returned.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetDescription``1(``0)">
+            <summary>Gets the localized description (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetDescription"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetGroupName``1(``0)">
+            <summary>Gets the localized group name (<see cref="P:System.ComponentModel.DataAnnotations.DisplayAttribute.GroupName"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetPrompt``1(``0)">
+            <summary>Gets the localized promt (<see cref="M:System.ComponentModel.DataAnnotations.DisplayAttribute.GetPrompt"/>) of the specified enum <paramref name="value"/>.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.GetAttributes``1(``0)">
+            <summary>
+            Gets the collection of the custom attributes for the specified enum <paramref name="value"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.ToEnum``1(System.String,System.Boolean)">
+            <summary>Parses the string representation of the specified enum value.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.ToEnumSafe``1(System.String,System.Boolean)">
+            <summary>Attempts to parse the string representation of the specified enum value.</summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.ToInt32``1(``0)">
+            <summary>
+            Converts the specified enum <paramref name="value"/> to its <see cref="T:System.Int32"/> representation.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnumExtensions.ToInt64``1(``0)">
+            <summary>
+            Converts the specified enum <paramref name="value"/> to its <see cref="T:System.Int64"/> representation.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.EnvironmentType">
+            <summary>
+            Specifies the type of the environment.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.EnvironmentType.Dev">
+            <summary>
+            Local/Development environment.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.EnvironmentType.QA">
+            <summary>
+            QA environment.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.EnvironmentType.Production">
+            <summary>
+            Production environment
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.EnvironmentTypeExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:RM.Common.Utils.EnvironmentType"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnvironmentTypeExtensions.IsDev(RM.Common.Utils.EnvironmentType)">
+            <summary>
+            Checks whether specified <paramref name="environment"/> is <see cref="F:RM.Common.Utils.EnvironmentType.Dev"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnvironmentTypeExtensions.IsQA(RM.Common.Utils.EnvironmentType)">
+            <summary>
+            Checks whether specified <paramref name="environment"/> is <see cref="F:RM.Common.Utils.EnvironmentType.QA"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnvironmentTypeExtensions.IsDevOrQA(RM.Common.Utils.EnvironmentType)">
+            <summary>
+            Checks whether specified <paramref name="environment"/> is <see cref="F:RM.Common.Utils.EnvironmentType.Dev"/> or <see cref="F:RM.Common.Utils.EnvironmentType.QA"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EnvironmentTypeExtensions.IsProduction(RM.Common.Utils.EnvironmentType)">
+            <summary>
+            Checks whether specified <paramref name="environment"/> is <see cref="F:RM.Common.Utils.EnvironmentType.Production"/>.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.EventsExtensions">
+            <summary>
+            Represents extension methods for events.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EventsExtensions.Raise(System.EventHandler,System.Object)">
+            <summary>
+            Raises an event synchronously.
+            NOTE: All handlers invoked in try-catch block, so exeption in one of them will not prevent others from executing.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EventsExtensions.RaiseAsync(System.EventHandler,System.Object)">
+            <summary>
+            Raises an event asynchronously.
+            NOTE: All handlers invoked in try-catch block, so exeption in one of them will not prevent others from executing.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EventsExtensions.Raise``1(System.EventHandler{``0},System.Object,``0)">
+            <summary>
+            Raises an event synchronously.
+            NOTE: All handlers invoked in try-catch block, so exeption in one of them will not prevent others from executing.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.EventsExtensions.RaiseAsync``1(System.EventHandler{``0},System.Object,``0)">
+            <summary>
+            Raises an event asynchronously.
+            NOTE: All handlers invoked in try-catch block, so exeption in one of them will not prevent others from executing.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.IEnumerableExtensions">
+            <summary>
+            <see cref="T:System.Collections.Generic.IEnumerable`1"/> extensions.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is not empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is not empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsNotEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is not empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is not empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is null or empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is null or empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is null or empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is null or empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsNotNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is not null or empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is not null or empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.IsNotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets a value indicating whether the current collection is null or empty.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>A value indicating whether the collection is null or empty. </returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.FirstOfType``1(System.Collections.IEnumerable)">
+            <summary>
+            Returns first element of an IEnumerable based on a specified type.
+            </summary>
+            <typeparam name="TResult">The type to filter the elements of the sequence on.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>First element of an IEnumerable based on a specified type.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.FirstOfTypeOrDefault``1(System.Collections.IEnumerable)">
+            <summary>
+            Returns first element of an IEnumerable based on a specified type or default value (if element not found).
+            </summary>
+            <typeparam name="TResult">The type to filter the elements of the sequence on.</typeparam>
+            <param name="source">An element sequence.</param>
+            <returns>First element of an IEnumerable based on a specified type or default value (if element not found).</returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs the specified action on each element of the sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+            <param name="source">An element sequence.</param>
+            <param name="action">The delegate to perform on each element of the sequence.</param>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.EqualsTo``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <param name="first">An sequence to compare to <paramref name="second"/>. Can be null.</param>
+            <param name="second">An sequence to compare to <paramref name="first"/>. Can be null.</param>
+            <returns><c>true</c> if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.EqualsTo``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Determines whether two sequences are equal by comparing their elements by using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <param name="first">An sequence to compare to <paramref name="second"/>. Can be null.</param>
+            <param name="second">An sequence to compare to <paramref name="first"/>. Can be null.</param>
+            <param name="comparer">An <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to use to compare elements. Can be null.</param>
+            <returns><c>true</c> if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.EqualsTo``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Determines whether two sequences are equal by comparing the elements by using the default equality comparer for their type.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <typeparam name="TKey">The type of the key returned by <paramref name="orderByKeySelector"/>.</typeparam>
+            <param name="first">An sequence to compare to <paramref name="second"/>. Can be null.</param>
+            <param name="second">An sequence to compare to <paramref name="first"/>. Can be null.</param>
+            <param name="orderByKeySelector">A function to extract a key from an element. Can not be null.</param>
+            <returns><c>true</c> if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.EqualsTo``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Determines whether two sequences are equal by comparing their elements by using a specified <see cref="T:System.Collections.Generic.IEqualityComparer`1"/>.
+            </summary>
+            <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
+            <typeparam name="TKey">The type of the key returned by <paramref name="orderByKeySelector"/>.</typeparam>
+            <param name="first">An sequence to compare to <paramref name="second"/>. Can be null.</param>
+            <param name="second">An sequence to compare to <paramref name="first"/>. Can be null.</param>
+            <param name="orderByKeySelector">A function to extract a key from an element. Can not be null.</param>
+            <param name="comparer">An <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> to use to compare elements. Can be null.</param>
+            <returns><c>true</c> if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.Except``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns the <paramref name="source"/> without <paramref name="item"/> using default equality comparer to compare values.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.ToHashSet``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Converts the <paramref name="source"/> collection to the <see cref="T:System.Collections.Generic.HashSet`1"/> using the default equality comparer..
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.ToHashSet``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Converts the <paramref name="source"/> collection to the <see cref="T:System.Collections.Generic.HashSet`1"/> using the specified <paramref name="comparer"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEnumerableExtensions.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Determines whether two sequences are equal.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.IEquitableExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:System.IEquatable`1" />.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(``0,``0,``0)">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified items.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(System.Nullable{``0},``0,``0)">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to <paramref name="item1"/> or <paramref name="item2"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(``0,``0,``0,``0)">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified items.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(System.Nullable{``0},``0,``0,``0)">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified items.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(``0,``0,``0,``0,``0)">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified items.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(System.Nullable{``0},``0,``0,``0,``0)">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified items.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(``0,``0[])">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified <paramref name="items"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(System.Nullable{``0},``0[])">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified <paramref name="items"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.IEquitableExtensions.IsOneOf``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines whether provided <paramref name="item"/> is equal to one of the specified items.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.NameValueCollectionExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:System.Collections.Specialized.NameValueCollection" />.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.NameValueCollectionExtensions.GetValue(System.Collections.Specialized.NameValueCollection,System.Func{System.String,System.Boolean})">
+            <summary>
+            Gets value from <paramref name="collection"/> using the specified <paramref name="predicate"/> (over keys).
+            </summary>
+            <param name="collection">The collection to search.</param>
+            <param name="predicate">The predicate which invoked over <see cref="P:System.Collections.Specialized.NameValueCollection.AllKeys"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RM.Common.Utils.NumbersExtensions">
+            <summary>
+            Represents extension methods for numbers.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.IsOdd(System.Int32)">
+            <summary>
+            Checks whether the specified <paramref name="number"/> is odd.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.IsEven(System.Int32)">
+            <summary>
+            Checks whether the specified <paramref name="number"/> is even.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.IsPositive(System.Int32)">
+            <summary>
+            Checks whether the specified <paramref name="number"/> is positive.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.IsNegative(System.Int32)">
+            <summary>
+            Checks whether the specified <paramref name="number"/> is negative.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.StartsWith(System.Int16,System.Int16,System.Boolean)">
+            <summary>
+            Checks whether the specified <paramref name="source"/> starts with specified <paramref name="value"/>.
+            </summary>
+            <param name="source">The source number.</param>
+            <param name="value">The value to check.</param>
+            <param name="ignoreSign">Determines whether to ignore sign or not.</param>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.StartsWith(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Checks whether the specified <paramref name="source"/> starts with specified <paramref name="value"/>.
+            </summary>
+            <param name="source">The source number.</param>
+            <param name="value">The value to check.</param>
+            <param name="ignoreSign">Determines whether to ignore sign or not.</param>
+        </member>
+        <member name="M:RM.Common.Utils.NumbersExtensions.StartsWith(System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            Checks whether the specified <paramref name="source"/> starts with specified <paramref name="value"/>.
+            </summary>
+            <param name="source">The source number.</param>
+            <param name="value">The value to check.</param>
+            <param name="ignoreSign">Determines whether to ignore sign or not.</param>
+        </member>
+        <member name="T:RM.Common.Utils.ICloneable`1">
+            <summary>
+            Supports cloning, which creates a new instance of a class with the same value as an existing instance.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.ICloneable`1.Clone">
+            <summary>
+            Creates a new object that is a full (deep) copy of the current instance.
+            </summary>
+            <returns>A new object that is a full (deep) copy of this instance.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.ObjectCloner">
+            <summary>
+            Provides a method for performing a deep copy of an object.
+            Binary Serialization is used to perform the copy.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.ObjectCloner.Clone``1(``0)">
+            <summary>
+            Perform a Deep Copy of the object.
+            <c>NOTE: class must be marked with <see cref="T:System.SerializableAttribute"/> attribute.</c>
+            </summary>
+            <typeparam name="T">The type of object being copied.</typeparam>
+            <param name="source">The object instance to copy.</param>
+            <returns>The copied object.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.ObjectPool`1">
+            <summary> A basic generic object pool. </summary>
+            <typeparam name="T"> The type of objects to pool. </typeparam>
+        </member>
+        <member name="M:RM.Common.Utils.ObjectPool`1.#ctor(System.Func{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:RM.Common.Utils.ObjectPool`1"/> class.
+            </summary>
+            <param name="creator">A function for creating the instances of <typeparamref name="T" /></param>
+        </member>
+        <member name="M:RM.Common.Utils.ObjectPool`1.#ctor(System.Func{`0},System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RM.Common.Utils.ObjectPool`1"/> class.
+            </summary>
+            <param name="creator">A function for creating the instances of <typeparamref name="T" /></param>
+            <param name="initialCount">How many object instances to create initially.</param>
+            <param name="initialCapacity">How large the initial capacity of the pool should be. Set this high enough that you won't exceed it, but not so high as to needlessly waste memory.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ObjectPool`1.#ctor(System.Func{`0},System.Action{`0},System.Int32,System.Int32)">
+            <summary>
+            Creates the object pool with <paramref name="initialCount" /> number of instances created and added to the pool. The pool will have an initial capacity of <paramref name="initialCapacity" />.
+            </summary>
+            <param name="creator">A function for creating the instances of <typeparamref name="T" /></param>
+            <param name="resetAction">An action for reseting the state of the instances of type <typeparamref name="T" /> to the initial state.</param>
+            <param name="initialCount">How many object instances to create initially.</param>
+            <param name="initialCapacity">How large the initial capacity of the pool should be. Set this high enough that you won't exceed it, but not so high as to needlessly waste memory.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ObjectPool`1.Acquire">
+            <summary>
+            Gets an instance of <typeparamref name="T" /> from the pool. If the pool is empty, a new instance of <typeparamref name="T" /> is created and returned to you instead.
+            </summary>
+            <returns>An unused instance of <typeparamref name="T" />.</returns>
+        </member>
+        <member name="M:RM.Common.Utils.ObjectPool`1.Release(`0)">
+            <summary>
+            Return (or add) an existing instance of <typeparamref name="T" /> to the pool.
+            </summary>
+            <param name="item"> The instance of <typeparamref name="T" /> to return to the pool.</param>
+            <exception cref="T:System.ArgumentNullException"> Thrown when <paramref name="item" /> is null.</exception>
+            <remarks>Do not return an object that you are still using. This will likely lead to the same object being "checked out" twice which will cause bugs. Also if <typeparamref name="T" /> implements <see cref="T:System.IDisposable" />, do not return an object that has been disposed.</remarks>
+        </member>
+        <member name="T:RM.Common.Utils.ReflectionExtensions">
+            <summary>
+            Represents extension methods for reflection.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.ReflectionExtensions.HasAttribute(System.Reflection.MemberInfo,System.Type,System.Boolean)">
+            <summary>
+            Checks whether <paramref name="memberInfo"/> has the specified <paramref name="attributeType"/>.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <param name="attributeType">Attribute to check.</param>
+            <param name="inherit">Specifiies whether to check among inherited attributes.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ReflectionExtensions.HasAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            Checks whether an <paramref name="memberInfo"/> has the specified attribute.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <param name="inherit">Specifiies whether to check among inherited attributes.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ReflectionExtensions.HasParameterlessConstructor(System.Type)">
+            <summary>
+            Checks whether a <paramref name="type"/> has the parameterless constructor.
+            </summary>
+            <param name="type">The type to check.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ReflectionExtensions.IsDerivedFrom(System.Type,System.Type)">
+            <summary>
+            Checks whether the specified <paramref name="derivedType"/> is derived from <paramref name="baseType"/>.
+            </summary>
+            <param name="derivedType">The derived type.</param>
+            <param name="baseType">The base type.</param>
+        </member>
+        <member name="M:RM.Common.Utils.ReflectionExtensions.IsDerivedFrom``1(System.Type)">
+            <summary>
+            Checks whether the specified <paramref name="derivedType"/> is derived from base type.
+            </summary>
+            <typeparam name="TBaseType">The base type.</typeparam>
+            <param name="derivedType">The derived type.</param>
+        </member>
+        <member name="T:RM.Common.Utils.StackExtensions">
+            <summary>
+            Represents extension methods for <see cref="T:System.Collections.Generic.Stack`1"/> and <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.StackExtensions.TryPop``1(System.Collections.Generic.Stack{``0})">
+            <summary>
+            Attempts to poop and return the object at the top of the <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.StackExtensions.TryPop``1(System.Collections.Concurrent.ConcurrentStack{``0})">
+            <summary>
+            Attempts to poop and return the object at the top of the <see cref="T:System.Collections.Concurrent.ConcurrentStack`1"/>
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.StringExtension">
+            <summary>
+            Represents extension methods for <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.EqualsOrdinalIgnoreCase(System.String,System.String)">
+            <summary>Determines whether two specified <see cref="T:System.String"/> objects have the same value (using <see cref="F:System.StringComparison.OrdinalIgnoreCase"/> comparison).</summary>
+            <param name="str1">The first string to compare, or null.</param>
+            <param name="str2">The second string to compare, or null.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.EqualsOrdinal(System.String,System.String)">
+            <summary>Determines whether two specified <see cref="T:System.String"/> objects have the same value (using <see cref="F:System.StringComparison.Ordinal"/> comparison).</summary>
+            <param name="str1">The first string to compare, or null.</param>
+            <param name="str2">The second string to compare, or null.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ContainsOrdinalIgnoreCase(System.String,System.String)">
+            <summary>Returns a value indicating whether a specified substring occurs (using <see cref="F:System.StringComparison.OrdinalIgnoreCase"/> comparison) within this string.</summary>
+            <param name="source">The source string.</param>
+            <param name="value">The string to seek.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ContainsOrdinal(System.String,System.String)">
+            <summary>Returns a value indicating whether a specified substring occurs (using <see cref="F:System.StringComparison.Ordinal"/> comparison) within this string.</summary>
+            <param name="source">The source string.</param>
+            <param name="value">The string to seek.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ContainsOrdinalIgnoreCaseNullSafe(System.String,System.String)">
+            <summary>
+            Returns a value indicating whether a specified substring occurs (using <see cref="F:System.StringComparison.OrdinalIgnoreCase"/> comparison) within this string.
+            NOTE: Method is null-safe (<paramref name="source"/> and <paramref name="value"/> can be null). Returns false if <paramref name="source"/> or <paramref name="value"/> is null.
+            </summary>
+            <param name="source">The source string.</param>
+            <param name="value">The string to seek.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ContainsOrdinalNullSafe(System.String,System.String)">
+            <summary>
+            Returns a value indicating whether a specified substring occurs (using <see cref="F:System.StringComparison.Ordinal"/> comparison) within this string.
+            NOTE: Method is null-safe (<paramref name="source"/> and <paramref name="value"/> can be null). Returns false if <paramref name="source"/> or <paramref name="value"/> is null.
+            </summary>
+            <param name="source">The source string.</param>
+            <param name="value">The string to seek.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.IsNullOrEmpty(System.String)">
+            <summary>Indicates whether the specified string is null or an empty string.</summary>
+            <param name="value">The string to test.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.IsNullOrWhiteSpace(System.String)">
+            <summary>Indicates whether a specified string is null, empty, or consists only of white-space characters.</summary>
+            <param name="value">The string to test.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.IsNotNullOrWhiteSpace(System.String)">
+            <summary>Indicates whether a specified string is not null, empty, or consists only of white-space characters.</summary>
+            <param name="value">The string to test.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ToByteSafe(System.String)">
+            <summary>
+            Tries to convert the string representation of a number to its <see cref="T:System.Byte"/> equivalent, and returns a converted number. Returns null if the conversion failed.
+            </summary>
+            <param name="str">A string that contains a number to convert.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ToIntSafe(System.String)">
+            <summary>
+            Tries to convert the string representation of a number to its <see cref="T:System.Int32"/> equivalent, and returns a converted number. Returns null if the conversion failed.
+            </summary>
+            <param name="str">A string that contains a number to convert.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ToLongSafe(System.String)">
+            <summary>
+            Tries to convert the string representation of a number to its <see cref="T:System.Int64"/> equivalent, and returns a converted number. Returns null if the conversion failed.
+            </summary>
+            <param name="str">A string that contains a number to convert.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.TrimToNull(System.String)">
+            <summary>
+            Trims string and if resulting string is empty, null is returned.
+            </summary>
+            <param name="str">A string to trim.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ToStringInvariant``1(``0)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.String"/> using the invariant culture formatting information.
+            </summary>
+            <param name="source">The source object to convert.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.ToStringInvariant``1(``0,System.String)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.String"/> using the specified <paramref name="format"/> and the invariant culture formatting information.
+            </summary>
+            <param name="source">The source object to convert.</param>
+            <param name="format">The format to use.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.First(System.String,System.Int32)">
+            <summary>
+            Returns a substring which contains a specified number of contiguous elements from the start of the string
+            </summary>
+            <param name="source">The source string</param>
+            <param name="count">The specified number of contiguous elements from the start of the string</param>
+            <returns>Returns a substring which contains a specified number of contiguous elements from the start of the string</returns>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.Last(System.String,System.Int32)">
+            <summary>
+            Returns a substring which contains a specified number of contiguous elements from the end of the string
+            </summary>
+            <param name="source">The source string</param>
+            <param name="count">The specified number of contiguous elements from the end of the string</param>
+            <returns>Returns a substring which contains a specified number of contiguous elements from the end of the string</returns>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.StartsWithAny(System.String,System.String,System.String)">
+            <summary>
+            Determines whether the beginning of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substring1">The first substring.</param>
+            <param name="substring2">The second substring.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.StartsWithAny(System.String,System.String,System.String,System.String)">
+            <summary>
+            Determines whether the beginning of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substring1">The first substring.</param>
+            <param name="substring2">The second substring.</param>
+            <param name="substring3">The third substring.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.StartsWithAny(System.String,System.String[])">
+            <summary>
+            Determines whether the beginning of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substrings">The substrings.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.StartsWithAny(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Determines whether the beginning of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substrings">The substrings.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.EndsWithAny(System.String,System.String,System.String)">
+            <summary>
+            Determines whether the end of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substring1">The first substring.</param>
+            <param name="substring2">The second substring.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.EndsWithAny(System.String,System.String,System.String,System.String)">
+            <summary>
+            Determines whether the end of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substring1">The first substring.</param>
+            <param name="substring2">The second substring.</param>
+            <param name="substring3">The third substring.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.EndsWithAny(System.String,System.String[])">
+            <summary>
+            Determines whether the end of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substrings">The substrings.</param>
+        </member>
+        <member name="M:RM.Common.Utils.StringExtension.EndsWithAny(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Determines whether the end of this string instance matches any of the specified strings.
+            </summary>
+            <param name="str">The source string to test.</param>
+            <param name="substrings">The substrings.</param>
+        </member>
+        <member name="T:RM.Common.Utils.TimerAutoResetMode">
+            <summary>
+            Represents an auto reset modes for <see cref="T:RM.Common.Utils.Timer"/> class.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.TimerAutoResetMode.Exact">
+            <summary>
+            Elapsed event will be raised at the exact amount of time specified in the <see cref="P:RM.Common.Utils.Timer.Interval"/> property.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.TimerAutoResetMode.Relative">
+            <summary>
+            Elapsed event will be raised only after the amount of time specified in the <see cref="P:RM.Common.Utils.Timer.Interval"/> property will pass after the previous <see cref="E:RM.Common.Utils.Timer.Elapsed"/> event has finished execution.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.Timer">
+            <summary>
+            Provides a mechanism for executing a method on a thread pool thread at specified intervals.
+            NOTE: Timer is thread-safe. Timer is "concurrent execution safe" (no "overlapped" <see cref="E:RM.Common.Utils.Timer.Elapsed"/> events will be triggered) in <see cref="F:RM.Common.Utils.TimerAutoResetMode.Relative"/> <see cref="P:RM.Common.Utils.Timer.AutoResetMode"/>.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Timer.StartDelay">
+            <summary>
+            The amount of time to delay before <see cref="E:RM.Common.Utils.Timer.Elapsed"/> event is invoked.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Timer.Interval">
+            <summary>
+            Gets the time interval on which to raise events. Min value is represented by <see cref="F:RM.Common.Utils.Timer.MinInterval"/> (1 millisecond). Max value is represented by <see cref="F:RM.Common.Utils.Timer.MaxInterval"/>.
+            The default value is 100ms.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Timer.AutoResetMode">
+            <summary>
+            Gets the AutoReset mode.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Timer.Enabled">
+            <summary>
+            Gets a value indicating whether the <see cref='T:RM.Common.Utils.Timer' /> is able to raise events at a defined interval.
+            </summary>
+        </member>
+        <member name="E:RM.Common.Utils.Timer.Elapsed">
+            <summary>
+            Occurs when the interval elapses.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.Timer.MinInterval">
+            <summary>
+            The min value allowed for the <see cref="P:RM.Common.Utils.Timer.Interval"/> property.
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.Timer.MaxInterval">
+            <summary>
+            The max value allowed for the <see cref="P:RM.Common.Utils.Timer.Interval"/> property.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.#ctor(System.EventHandler{System.Threading.CancellationToken},RM.Common.Utils.TimerAutoResetMode)">
+            <summary>
+            Initializes a new instance of the <see cref='T:RM.Common.Utils.Timer' /> class and sets <see cref="P:RM.Common.Utils.Timer.Interval"/> and <see cref="P:RM.Common.Utils.Timer.StartDelay"/> properties to the default values (100ms).
+            </summary>
+            <param name="handler">The <see cref="E:RM.Common.Utils.Timer.Elapsed"/> event handler.</param>
+            <param name="autoResetMode">The auto reset mode.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.#ctor(System.TimeSpan,System.EventHandler{System.Threading.CancellationToken},RM.Common.Utils.TimerAutoResetMode)">
+            <summary>
+            Initializes a new instance of the <see cref='T:RM.Common.Utils.Timer' /> class and sets <see cref="P:RM.Common.Utils.Timer.Interval"/> and <see cref="P:RM.Common.Utils.Timer.StartDelay"/> properties to the <paramref name="interval"/> value.
+            </summary>
+            <param name="interval">The time interval on which to raise events. Min value is represented by <see cref="F:RM.Common.Utils.Timer.MinInterval"/> (1 millisecond). Max value is represented by <see cref="F:RM.Common.Utils.Timer.MaxInterval"/>.</param>
+            <param name="handler">The <see cref="E:RM.Common.Utils.Timer.Elapsed"/> event handler.</param>
+            <param name="autoResetMode">The auto reset mode.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.#ctor(System.TimeSpan,System.TimeSpan,System.EventHandler{System.Threading.CancellationToken},RM.Common.Utils.TimerAutoResetMode)">
+            <summary>
+            Initializes a new instance of the <see cref='T:RM.Common.Utils.Timer' /> class.
+            </summary>
+            <param name="startDelay">The amount of time to delay before <see cref="E:RM.Common.Utils.Timer.Elapsed"/> event is invoked. Specify <see cref="F:System.TimeSpan.Zero"/> to start the timer immediately.</param>
+            <param name="interval">The time interval on which to raise events. Min value is represented by <see cref="F:RM.Common.Utils.Timer.MinInterval"/> (1 millisecond). Max value is represented by <see cref="F:RM.Common.Utils.Timer.MaxInterval"/>.</param>
+            <param name="handler">The <see cref="E:RM.Common.Utils.Timer.Elapsed"/> event handler.</param>
+            <param name="autoResetMode">The auto reset mode.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.Change(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Changes an <see cref="P:RM.Common.Utils.Timer.Interval"/> and <see cref="P:RM.Common.Utils.Timer.StartDelay"/> and restarts timer (if already started).
+            </summary>
+            <param name="startDelay">The start delay to change.</param>
+            <param name="interval">The interval to change.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.Start">
+            <summary>
+            Starts the timing. Does nothing if Timer has been already started.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.Stop">
+            <summary>
+            Stops the timing. Does nothing if Timer has been already stopped.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.Dispose(System.Boolean)">
+             <summary>
+             Dispose(bool disposing) executes in two distinct scenarios.
+             If disposing equals true, the method has been called directly or indirectly by a user's code. Managed and unmanaged resources can be disposed.
+             If disposing equals false, the method has been called by the runtime from inside the finalizer and you should not reference other objects. Only unmanaged resources can be disposed. 
+             </summary>
+             <param name="disposing">Indicates whether method has been called directly or indirectly by a user's code or from inside the finalizer.</param>
+             <example>
+             Derived class implementation example:
+             <code>
+             private bool _disposed = false;
+             protected override void Dispose(bool disposing)
+             {
+                if (_disposed) return;
+            
+                if (disposing)
+                {
+                   // Dispose managed resources.
+                }
+            
+                // Dispose unmanaged resources.
+                _disposed = true;
+            
+                base.Dispose(disposing);
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:RM.Common.Utils.Timer.Finalize">
+            <summary>
+            The <see cref="T:RM.Common.Utils.Timer"/> class finalizer.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.TreeExtensions">
+            <summary>
+            Extensions for tree-like object structures.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.TreeExtensions.Ancestors``1(``0,System.Func{``0,``0})">
+            <summary>
+            Returns a collection of elements that contains all ancestors of current node.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.TreeExtensions.AncestorsAndSelf``1(``0,System.Func{``0,``0})">
+            <summary>
+            Returns a collection of elements that contains current node with all ancestors.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.TreeExtensions.Descendants``1(``0,System.Func{``0,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Returns a collection of the descendant elements for this element.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.TreeExtensions.DescendantsAndSelf``1(``0,System.Func{``0,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Returns a collection of elements that contains current node with all descendant nodes for this node.
+            </summary>
+        </member>
+        <member name="T:RM.Common.Utils.UnixTime">
+            <summary>
+            Represents class for work with Unix time (timestamp).
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.UnixTime.Initial">
+            <summary>
+            The initial Unix time (1970-01-01 00:00:00).
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.UnixTime.MinValue">
+            <summary>
+            The min Unix time (1901-12-13 20:45:52).
+            </summary>
+        </member>
+        <member name="F:RM.Common.Utils.UnixTime.MaxValue">
+            <summary>
+            The max Unix time (2038-01-19 3:14:07).
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.UnixTime.IsValidUnixDate(System.DateTime)">
+            <summary>
+            Chechs whether the specified <paramref name="datetime"/> is a valid Unix date (is within <see cref="F:RM.Common.Utils.UnixTime.MinValue"/> and <see cref="F:RM.Common.Utils.UnixTime.MaxValue"/>).
+            </summary>
+            <param name="datetime">The date to check.</param>
+        </member>
+        <member name="M:RM.Common.Utils.UnixTime.IsInitialUnixTime(System.DateTime)">
+            <summary>
+            Checks whether the specified <paramref name="datetime"/> is the initial Unix date (1970-01-01 00:00:00).
+            </summary>
+            <param name="datetime">The datetime to check.</param>
+        </member>
+        <member name="M:RM.Common.Utils.UnixTime.ToUnixTime(System.DateTime)">
+            <summary>
+            Converts the specified datetime to the Unix timestamp (the number of seconds since 1970-01-01 00:00:00).
+            </summary>
+            <param name="datetime">The datetime to convert.</param>
+        </member>
+        <member name="M:RM.Common.Utils.UnixTime.FromUnixTime(System.Int32)">
+            <summary>
+            Converts the specified Unix timestamp (the number of seconds since 1970-01-01 00:00:00) to the datetime.
+            </summary>
+            <param name="unixTimestamp">The unix timestamp to convert.</param>
+        </member>
+        <member name="M:RM.Common.Utils.UnixTime.FromUnixTime(System.Int64)">
+            <summary>
+            Converts the specified Unix timestamp (the number of seconds since 1970-01-01 00:00:00) to the datetime.
+            </summary>
+            <param name="unixTimestamp">The unix timestamp to convert.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.CollectionItemIntRangeAttribute">
+            <summary>
+            Used for specifying a range constraint for <see cref="T:System.Collections.Generic.ICollection`1"/> items.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CollectionItemIntRangeAttribute.Minimum">
+            <summary>
+            Gets the minimum value for the range
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CollectionItemIntRangeAttribute.Maximum">
+            <summary>
+            Gets the maximum value for the range
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemIntRangeAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor that takes <see cref="T:System.Int32"/> minimum and maximum values
+            </summary>
+            <param name="minimum">The minimum value, inclusive</param>
+            <param name="maximum">The maximum value, inclusive</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemIntRangeAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:RM.Common.Utils.Validation.CollectionItemLongRangeAttribute">
+            <summary>
+            Used for specifying a range constraint for <see cref="T:System.Collections.Generic.ICollection`1"/> items.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CollectionItemLongRangeAttribute.Minimum">
+            <summary>
+            Gets the minimum value for the range
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CollectionItemLongRangeAttribute.Maximum">
+            <summary>
+            Gets the maximum value for the range
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemLongRangeAttribute.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Constructor that takes <see cref="T:System.Int64"/> minimum and maximum values
+            </summary>
+            <param name="minimum">The minimum value, inclusive</param>
+            <param name="maximum">The maximum value, inclusive</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemLongRangeAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:RM.Common.Utils.Validation.CollectionItemStringLengthAttribute">
+            <summary>
+            Used for specifying a string length constraint for <see cref="T:System.Collections.Generic.ICollection`1"/> items.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CollectionItemStringLengthAttribute.MaximumLength">
+            <summary>
+            Gets the maximum value for the range
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CollectionItemStringLengthAttribute.MinimumLength">
+            <summary>
+            Gets the minimum value for the range
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemStringLengthAttribute.#ctor(System.Int32)">
+            <summary>
+            Constructor that accepts the maximum length of the string.
+            </summary>
+            <param name="maximumLength">The maximum length, inclusive. It may not be negative.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemStringLengthAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor that accepts the maximum length of the string.
+            </summary>
+            <param name="minimumLength">The minimum acceptable length of the string.</param>
+            <param name="maximumLength">The maximum length, inclusive. It may not be negative.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CollectionItemStringLengthAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:RM.Common.Utils.Validation.ComparisonAttribute">
+            <summary>
+            Represents a base attribute which compares attribute-target property/field with other property represented by <see cref="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField"/>.
+            NOTE: Works only on <see cref="T:System.IComparable"/> properties or fields.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField">
+            <summary>
+            The name of the other property or field.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.ComparisonAttribute.#ctor(System.String,System.Func{System.Int32,System.Boolean},System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:RM.Common.Utils.Validation.ComparisonAttribute"/> class.
+            </summary>
+            <param name="otherPropertyOfField">The name of the other property or field.</param>
+            <param name="predicate">The predicate to validate the result of comparing (<see cref="M:System.IComparable.CompareTo(System.Object)"/>) attribute target and <see cref="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField"/>.</param>
+            <param name="errorMessage">A non-localized error message to use in <see cref="P:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessageString"/>.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.ComparisonAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:RM.Common.Utils.Validation.CompositeValidationResult">
+            <summary>
+            Represents a composit validation result.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.CompositeValidationResult.Results">
+            <summary>
+            The validation results.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CompositeValidationResult.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:RM.Common.Utils.Validation.CompositeValidationResult"/> class by using an error message.
+            </summary>
+            <param name="errorMessage">The user-visible error message.  If null, <see cref="M:System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)"/> will use <see cref="M:System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)"/> for its error message.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CompositeValidationResult.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Constructor that accepts an error message as well as a list of member names involved in the validation.
+            This error message would override any error message provided on the <see cref="T:System.ComponentModel.DataAnnotations.ValidationAttribute"/>.
+            </summary>
+            <param name="errorMessage">The user-visible error message.  If null, <see cref="M:System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)"/> will use <see cref="M:System.ComponentModel.DataAnnotations.ValidationAttribute.FormatErrorMessage(System.String)"/> for its error message.</param>
+            <param name="memberNames">The list of member names affected by this result.  This list of member names is meant to be used by presentation layers to indicate which fields are in error.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CompositeValidationResult.#ctor(System.ComponentModel.DataAnnotations.ValidationResult)">
+            <inheritdoc />
+        </member>
+        <member name="M:RM.Common.Utils.Validation.CompositeValidationResult.AddResult(System.ComponentModel.DataAnnotations.ValidationResult)">
+            <summary>
+            Add validation result to the list of results (<see cref="P:RM.Common.Utils.Validation.CompositeValidationResult.Results"/>).
+            </summary>
+            <param name="validationResult">The result to add.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.GreaterThanAttribute">
+            <summary>
+            Represents an attribute which validates that attribute-target property/field greater than other property represented by <see cref="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField"/>.
+            NOTE: Works only on <see cref="T:System.IComparable"/> properties or fields.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.GreaterThanAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:RM.Common.Utils.Validation.GreaterThanAttribute"/> class.
+            </summary>
+            <param name="otherPropertyOfField">The name of the other property or field.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.GreaterThanOrEqualToAttribute">
+            <summary>
+            Represents an attribute which validates that attribute-target property/field greater than other property represented by <see cref="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField"/>.
+            NOTE: Works only on <see cref="T:System.IComparable"/> properties or fields.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.GreaterThanOrEqualToAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:RM.Common.Utils.Validation.GreaterThanOrEqualToAttribute"/> class.
+            </summary>
+            <param name="otherPropertyOfField">The name of the other property or field.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.LessThanAttribute">
+            <summary>
+            Represents an attribute which validates that attribute-target property/field greater than other property represented by <see cref="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField"/>.
+            NOTE: Works only on <see cref="T:System.IComparable"/> properties or fields.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.LessThanAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:RM.Common.Utils.Validation.LessThanAttribute"/> class.
+            </summary>
+            <param name="otherPropertyOfField">The name of the other property or field.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.LessThanOrEqualToAttribute">
+            <summary>
+            Represents an attribute which validates that attribute-target property/field less than or equal to other property/field represented by <see cref="P:RM.Common.Utils.Validation.ComparisonAttribute.OtherPropertyOfField"/>.
+            NOTE: Works only on <see cref="T:System.IComparable"/> properties or fields.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.LessThanOrEqualToAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:RM.Common.Utils.Validation.LessThanOrEqualToAttribute"/> class.
+            </summary>
+            <param name="otherPropertyOfField">The name of the other property or field.</param>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.MaxCountAttribute">
+            <summary>
+            Specifies the maximum count of <see cref="T:System.Collections.ICollection"/> items allowed in a property.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.MaxCountAttribute.MaxCount">
+            <summary>
+            Gets the maximum allowable count of the items in the attached <see cref="T:System.Collections.ICollection"/> property/field.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.MaxCountAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RM.Common.Utils.Validation.MaxCountAttribute"/> class.
+            </summary>
+            <param name="maxCount">the maximum allowable count of the items in the attached <see cref="T:System.Collections.ICollection"/> property/field. Value must be greater than zero.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.MaxCountAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>Validates the specified value with respect to the current validation attribute.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="validationContext">The context information about the validation operation.</param>
+            <returns>An instance of the <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"></see> class.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.MinCountAttribute">
+            <summary>
+            Specifies the minimum count of <see cref="T:System.Collections.ICollection"/> items allowed in a property.
+            </summary>
+        </member>
+        <member name="P:RM.Common.Utils.Validation.MinCountAttribute.MinCount">
+            <summary>
+            Gets the minimum allowable count of the items in the attached <see cref="T:System.Collections.ICollection"/> property/field.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.MinCountAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RM.Common.Utils.Validation.MinCountAttribute"/> class.
+            </summary>
+            <param name="minCount">the minimum allowable count of the items in the attached <see cref="T:System.Collections.ICollection"/> property/field. Value must be greater than zero.</param>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.MinCountAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>Validates the specified value with respect to the current validation attribute.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="validationContext">The context information about the validation operation.</param>
+            <returns>An instance of the <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"></see> class.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.ValidateObjectAttribute">
+            <summary>
+            Provides validation for the complex objects properties/fields.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.ValidateObjectAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>Validates the specified value with respect to the current validation attribute.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="validationContext">The context information about the validation operation.</param>
+            <returns>An instance of the <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"></see> class.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.ValidateObjectCollectionAttribute">
+            <summary>
+            Provides validation for the complex objects properties/fields.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.ValidateObjectCollectionAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>Validates the specified value with respect to the current validation attribute.</summary>
+            <param name="value">The value to validate.</param>
+            <param name="validationContext">The context information about the validation operation.</param>
+            <returns>An instance of the <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"></see> class.</returns>
+        </member>
+        <member name="T:RM.Common.Utils.Validation.ValidationExtensions">
+            <summary>
+            Provides a set of extenions for validating objects, using their associated <see cref="T:System.ComponentModel.DataAnnotations.ValidationAttribute"/> custom attributes.
+            </summary>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.ValidationExtensions.Validate(System.Object)">
+            <summary>
+            Throws a <see cref="T:System.ComponentModel.DataAnnotations.ValidationException"/> if the given <paramref name="obj"/> is not valid.
+            </summary>
+            <remarks>
+            This method evaluates all <see cref="T:System.ComponentModel.DataAnnotations.ValidationAttribute"/>s attached to the object's type.
+            </remarks>
+            <param name="obj">The object instance to test.  It cannot be null.</param>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="obj"/> is null.</exception>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">When <paramref name="obj"/> is found to be invalid.</exception>
+        </member>
+        <member name="M:RM.Common.Utils.Validation.ValidationExtensions.IsValid(System.Object)">
+            <summary>
+            Gets a value that indicates whether <paramref name="obj"/> is valid.
+            </summary>
+            <param name="obj">The object instance to test.  It cannot be null.</param>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="obj"/> is null.</exception>
+            <returns>true if <paramref name="obj"/> is valid; otherwise, false.</returns>
+        </member>
+    </members>
+</doc>
